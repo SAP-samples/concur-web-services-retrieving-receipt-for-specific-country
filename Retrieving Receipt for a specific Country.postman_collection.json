@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "2beafb6b-a588-49e7-8ea6-38d4321235b2",
+		"name": "Retrieving Receipt for a specific Country",
+		"description": "**Introduction**\n\nThis collection will demonstrate how to retrieve Receipt images for specific criteria.\n\n**Prerequisites**\n\nThis collection does not contain the necessary API calls needed for authentication with Concur. Please reference this [GitHub repository](https://github.com/SAP-samples/concur-web-services-authentication) and/or [this post](https://blogs.sap.com/2023/01/23/introduction-to-web-services-for-concur-expense-authentication/) for information on authentication methodology and the global variables used by this collection.\n\nThe application SCOPEs required are:\n\n- EXPRPT\n    \n- IMAGE\n    \n\n**Description**\n\nReceipt Images can be downloaded by Expense Report. All receipt for the Expense Report will be compiled into a single PDF-file. You can filter the Report list on certain criteria result by using the parameters on the Reports v3 API to ensure the result only returns the relevant reports to download images for.  \nSteps:\n\n1. Get Report list based on filter criteria\n    \n2. Get Image per Report ID\n    \n3. Get Image file\n    \n\n<img src=\"https://content.pstmn.io/b00417e3-cfba-4670-8a04-7360b7750a46/aW1hZ2UucG5n\" width=\"413\" height=\"296\">",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11931626"
+	},
+	"item": [
+		{
+			"name": "Get Reports v3 - List of Reports",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{datacenteruri}}/api/v3.0/expense/reports?offset=<string>&limit=<integer>&user=<string>&approvalStatusCode=<string>&paymentStatusCode=<string>&currencyCode=<string>&paymentType=<string>&reimbursementMethod=<string>&approverLoginID=<string>&expenseTypeCode=<string>&attendeeTypeCode=<string>&countryCode=<string>&batchID=<string>&vendorName=<string>&hasVAT=<boolean>&hasImages=<boolean>&hasAttendees=<boolean>&hasBillableExpenses=<boolean>&isTestUser=<boolean>&expenseGroupConfigID=<string>&entryTransactionDateBefore=<dateTime>&entryTransactionDateAfter=<dateTime>&createDateBefore=<dateTime>&createDateAfter=<dateTime>&userDefinedDateBefore=<dateTime>&userDefinedDateAfter=<dateTime>&submitDateBefore=<dateTime>&submitDateAfter=<dateTime>&processingPaymentDateBefore=<dateTime>&processingPaymentDateAfter=<dateTime>&paidDateBefore=<dateTime>&paidDateAfter=<dateTime>&modifiedDateBefore=<dateTime>&modifiedDateAfter=<dateTime>",
+					"protocol": "https",
+					"host": [
+						"{{datacenteruri}}"
+					],
+					"path": [
+						"api",
+						"v3.0",
+						"expense",
+						"reports"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "<string>"
+						},
+						{
+							"key": "limit",
+							"value": "<integer>"
+						},
+						{
+							"key": "user",
+							"value": "<string>"
+						},
+						{
+							"key": "approvalStatusCode",
+							"value": "<string>"
+						},
+						{
+							"key": "paymentStatusCode",
+							"value": "<string>"
+						},
+						{
+							"key": "currencyCode",
+							"value": "<string>"
+						},
+						{
+							"key": "paymentType",
+							"value": "<string>"
+						},
+						{
+							"key": "reimbursementMethod",
+							"value": "<string>"
+						},
+						{
+							"key": "approverLoginID",
+							"value": "<string>"
+						},
+						{
+							"key": "expenseTypeCode",
+							"value": "<string>"
+						},
+						{
+							"key": "attendeeTypeCode",
+							"value": "<string>"
+						},
+						{
+							"key": "countryCode",
+							"value": "<string>"
+						},
+						{
+							"key": "batchID",
+							"value": "<string>"
+						},
+						{
+							"key": "vendorName",
+							"value": "<string>"
+						},
+						{
+							"key": "hasVAT",
+							"value": "<boolean>"
+						},
+						{
+							"key": "hasImages",
+							"value": "<boolean>"
+						},
+						{
+							"key": "hasAttendees",
+							"value": "<boolean>"
+						},
+						{
+							"key": "hasBillableExpenses",
+							"value": "<boolean>"
+						},
+						{
+							"key": "isTestUser",
+							"value": "<boolean>"
+						},
+						{
+							"key": "expenseGroupConfigID",
+							"value": "<string>"
+						},
+						{
+							"key": "entryTransactionDateBefore",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "entryTransactionDateAfter",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "createDateBefore",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "createDateAfter",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "userDefinedDateBefore",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "userDefinedDateAfter",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "submitDateBefore",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "submitDateAfter",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "processingPaymentDateBefore",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "processingPaymentDateAfter",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "paidDateBefore",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "paidDateAfter",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "modifiedDateBefore",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "modifiedDateAfter",
+							"value": "<dateTime>"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Reports v3 - List of Reports - example",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{dataCenterURI}}/api/v3.0/expense/reports?user=ALL&countryCode=IT&hasImages=TRUE&paidDateBefore=2023-06-16&paidDateAfter=2023-06-13",
+					"protocol": "https",
+					"host": [
+						"{{dataCenterURI}}"
+					],
+					"path": [
+						"api",
+						"v3.0",
+						"expense",
+						"reports"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "<string>",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "<integer>",
+							"disabled": true
+						},
+						{
+							"key": "user",
+							"value": "ALL"
+						},
+						{
+							"key": "approvalStatusCode",
+							"value": "<string>",
+							"disabled": true
+						},
+						{
+							"key": "paymentStatusCode",
+							"value": "<string>",
+							"disabled": true
+						},
+						{
+							"key": "currencyCode",
+							"value": "<string>",
+							"disabled": true
+						},
+						{
+							"key": "paymentType",
+							"value": "<string>",
+							"disabled": true
+						},
+						{
+							"key": "reimbursementMethod",
+							"value": "<string>",
+							"disabled": true
+						},
+						{
+							"key": "approverLoginID",
+							"value": "<string>",
+							"disabled": true
+						},
+						{
+							"key": "expenseTypeCode",
+							"value": "<string>",
+							"disabled": true
+						},
+						{
+							"key": "attendeeTypeCode",
+							"value": "<string>",
+							"disabled": true
+						},
+						{
+							"key": "countryCode",
+							"value": "IT"
+						},
+						{
+							"key": "batchID",
+							"value": "<string>",
+							"disabled": true
+						},
+						{
+							"key": "vendorName",
+							"value": "<string>",
+							"disabled": true
+						},
+						{
+							"key": "hasVAT",
+							"value": "<boolean>",
+							"disabled": true
+						},
+						{
+							"key": "hasImages",
+							"value": "TRUE"
+						},
+						{
+							"key": "hasAttendees",
+							"value": "<boolean>",
+							"disabled": true
+						},
+						{
+							"key": "hasBillableExpenses",
+							"value": "<boolean>",
+							"disabled": true
+						},
+						{
+							"key": "isTestUser",
+							"value": "<boolean>",
+							"disabled": true
+						},
+						{
+							"key": "expenseGroupConfigID",
+							"value": "<string>",
+							"disabled": true
+						},
+						{
+							"key": "entryTransactionDateBefore",
+							"value": "<dateTime>",
+							"disabled": true
+						},
+						{
+							"key": "entryTransactionDateAfter",
+							"value": "<dateTime>",
+							"disabled": true
+						},
+						{
+							"key": "createDateBefore",
+							"value": "<dateTime>",
+							"disabled": true
+						},
+						{
+							"key": "createDateAfter",
+							"value": "<dateTime>",
+							"disabled": true
+						},
+						{
+							"key": "userDefinedDateBefore",
+							"value": "<dateTime>",
+							"disabled": true
+						},
+						{
+							"key": "userDefinedDateAfter",
+							"value": "<dateTime>",
+							"disabled": true
+						},
+						{
+							"key": "submitDateBefore",
+							"value": "<dateTime>",
+							"disabled": true
+						},
+						{
+							"key": "submitDateAfter",
+							"value": "<dateTime>",
+							"disabled": true
+						},
+						{
+							"key": "processingPaymentDateBefore",
+							"value": "<dateTime>",
+							"disabled": true
+						},
+						{
+							"key": "processingPaymentDateAfter",
+							"value": "<dateTime>",
+							"disabled": true
+						},
+						{
+							"key": "paidDateBefore",
+							"value": "2023-06-16"
+						},
+						{
+							"key": "paidDateAfter",
+							"value": "2023-06-13"
+						},
+						{
+							"key": "modifiedDateBefore",
+							"value": "<dateTime>",
+							"disabled": true
+						},
+						{
+							"key": "modifiedDateAfter",
+							"value": "<dateTime>",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET an image v1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{datacenteruri}}/api/image/v1.0/report/:reportID",
+					"protocol": "https",
+					"host": [
+						"{{datacenteruri}}"
+					],
+					"path": [
+						"api",
+						"image",
+						"v1.0",
+						"report",
+						":reportID"
+					],
+					"variable": [
+						{
+							"key": "reportID"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Image file",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "imageurl",
+					"host": [
+						"imageurl"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
