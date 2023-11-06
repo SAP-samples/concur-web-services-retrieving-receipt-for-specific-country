@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "2beafb6b-a588-49e7-8ea6-38d4321235b2",
+		"_postman_id": "181677a0-8a42-4309-8ae9-9600c631fcc1",
 		"name": "Retrieving Receipt for a specific Country",
-		"description": "**Introduction**\n\nThis collection will demonstrate how to retrieve Receipt images for specific criteria.\n\n**Prerequisites**\n\nThis collection does not contain the necessary API calls needed for authentication with Concur. Please reference this [GitHub repository](https://github.com/SAP-samples/concur-web-services-authentication) and/or [this post](https://blogs.sap.com/2023/01/23/introduction-to-web-services-for-concur-expense-authentication/) for information on authentication methodology and the global variables used by this collection.\n\nThe application SCOPEs required are:\n\n- EXPRPT\n    \n- IMAGE\n    \n\n**Description**\n\nReceipt Images can be downloaded by Expense Report. All receipt for the Expense Report will be compiled into a single PDF-file. You can filter the Report list on certain criteria result by using the parameters on the Reports v3 API to ensure the result only returns the relevant reports to download images for.  \nSteps:\n\n1. Get Report list based on filter criteria\n    \n2. Get Image per Report ID\n    \n3. Get Image file\n    \n\n<img src=\"https://content.pstmn.io/b00417e3-cfba-4670-8a04-7360b7750a46/aW1hZ2UucG5n\" width=\"413\" height=\"296\">",
+		"description": "**Introduction**\n\nThis collection will demonstrate how to retrieve Receipt images for specific criteria.\n\n**Prerequisites**\n\nThis collection does not contain the necessary API calls needed for authentication with Concur. Please reference this [GitHub repository](https://github.com/SAP-samples/concur-web-services-authentication) and/or [this post](https://blogs.sap.com/2023/01/23/introduction-to-web-services-for-concur-expense-authentication/) for information on authentication methodology and the global variables used by this collection.\n\nThe application SCOPEs required are:\n\n- EXPRPT\n- IMAGE\n    \n\n**Description**\n\nReceipt Images can be downloaded by Expense Report. All receipt for the Expense Report will be compiled into a single PDF-file. You can filter the Report list on certain criteria result by using the parameters on the Reports v3 API to ensure the result only returns the relevant reports to download images for.  \nSteps:\n\n1. Get Report list based on filter criteria\n2. Get Image per Report ID\n3. Get Image file",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "11931626"
+		"_exporter_id": "30933268"
 	},
 	"item": [
 		{
