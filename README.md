@@ -1,6 +1,6 @@
 # SAP Concur Client Web Services - Retrieving Receipts for a specific Country
 <!-- Please include descriptive title -->
-[![REUSE status](https://api.reuse.software/info/github.com/SAP-samples/concur-web-services-retrieving-receipt-for-specific-country)](https://api.reuse.software/info/github.com/SAP-samples/concur-web-services-retrieving-receipt-for-specific-country)
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/concur-web-services-retrieving-receipt-for-specific-country)](https://api.reuse.software/info/github.com/SAP-samples/concur-web-services-retrieving-receipt-for-specific-country)
 
 ## Description
 <!-- Please include SEO-friendly description -->
